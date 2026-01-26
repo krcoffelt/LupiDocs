@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupi Docs & Designs | From Draft to Readers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --lupi-blue: #0047AB; }
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Roboto Slab', serif; }
+    .text-lupi { color: var(--lupi-blue); }
+    .bg-lupi { background-color: var(--lupi-blue); }
+    .nav-link { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #64748b; transition: color 0.2s; }
+    .nav-link:hover { color: var(--lupi-blue); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 120ms; }
+    .delay-2 { transition-delay: 220ms; }
+    .delay-3 { transition-delay: 320ms; }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-8 h-20 flex justify-between items-center">
+      <div class="flex flex-col leading-none">
+        <span class="font-bold text-xl tracking-tight uppercase">Lupi <span class="text-lupi">Docs & Designs</span></span>
+        <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400">From Draft to Publish</span>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#bookshelf" class="nav-link">Books</a>
+        <a href="#about" class="nav-link">Our Story</a>
+      </div>
+      <a href="#contact" class="bg-lupi text-white px-5 py-3 rounded text-[12px] font-bold tracking-widest hover:opacity-90 transition transform hover:scale-105 active:scale-95">
+        Book a Consult
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="py-20 md:py-28 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-r from-slate-50 via-white to-blue-50 shadow-2xl px-8 py-12 md:px-14 md:py-16 text-center reveal active">
+        <div class="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
+          <div class="absolute -left-10 -top-16 h-48 w-48 rounded-full bg-gradient-to-br from-lupi/20 to-white blur-3xl"></div>
+          <div class="absolute right-[-80px] bottom-[-60px] h-64 w-64 rounded-full bg-gradient-to-tr from-blue-200/50 to-white blur-3xl"></div>
+        </div>
+        <div class="relative space-y-6">
+          <h1 class="text-5xl md:text-6xl text-slate-900 leading-[1.05]">
+            Your ideas, published beautifully.<br><span class="text-lupi italic font-light">Founder-led, boutique support.</span>
+          </h1>
+          <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            A hands-on publishing partner for thought leaders and entrepreneurs. We tighten manuscripts, craft covers and interiors, and guide launches that reach real readers.
+          </p>
+          <div class="flex justify-center gap-4 flex-wrap">
+            <a href="#contact" class="bg-lupi text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+              Start a Consult
+            </a>
+            <a href="#bookshelf" class="border border-slate-200 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] text-slate-700 hover:border-lupi hover:text-lupi transition">
+              View Recent Books
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborators / Proof -->
+  <section class="py-12 border-t border-b border-slate-50 bg-slate-50/50">
+    <div class="max-w-6xl mx-auto px-8">
+      <div class="flex flex-wrap justify-center items-center gap-6 text-slate-400 text-xs uppercase tracking-[0.28em] reveal">
+        <span class="w-full text-center text-[10px] font-bold">Trusted by collaborators and partners</span>
+        <span class="font-bold text-slate-600 tracking-tight text-sm">Rich Pageant Media</span>
+        <span class="font-bold text-slate-600 tracking-tight text-sm">Knox Company</span>
+        <span class="font-bold text-slate-600 tracking-tight text-sm">KTAR News</span>
+        <span class="font-bold text-slate-600 tracking-tight text-sm">Ericsson-LG</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 px-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+      <div class="text-center space-y-2">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400 font-bold">What we run</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900">High-impact publishing and promotion.</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Bestseller Campaigns</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Retail momentum</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>Amazon, Barnes & Noble, Kobo, BAM</li>
+            <li>Sales velocity and category pushes</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Verified Reviews</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Social proof</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>Amazon, Barnes & Noble, Goodreads</li>
+            <li>Professional editorial coverage</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Social & Digital</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Multi-platform reach</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>YouTube, Instagram, Facebook, X</li>
+            <li>Digital press placements</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Premium Media & Hotel</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Physical + media</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>Bedside Reading luxury hotels</li>
+            <li>Billboards, print, 6 digital interviews</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Manuscript & Positioning</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Clarity before launch</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>Outline and manuscript reviews</li>
+            <li>Audience, promise, and positioning</li>
+          </ul>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Design & Production</p>
+          <h3 class="text-lg font-semibold text-slate-900 mt-2">Retail-ready assets</h3>
+          <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
+            <li>Cover + interior (print/ebook)</li>
+            <li>ISBN/distribution guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 px-8 bg-slate-50 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 bg-white rounded-lg border border-slate-100 shadow-sm reveal">
+          <p class="text-[11px] uppercase tracking-[0.18em] font-bold text-slate-500">Guarantee</p>
+          <p class="text-base font-semibold text-slate-900 mt-1">100% Money Back</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-slate-100 shadow-sm reveal delay-1">
+          <p class="text-[11px] uppercase tracking-[0.18em] font-bold text-slate-500">Quality</p>
+          <p class="text-base font-semibold text-slate-900 mt-1">100% Satisfaction</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-slate-100 shadow-sm reveal delay-2">
+          <p class="text-[11px] uppercase tracking-[0.18em] font-bold text-slate-500">Support</p>
+          <p class="text-base font-semibold text-slate-900 mt-1">Fast, dedicated</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg border border-slate-100 shadow-sm reveal delay-3">
+          <p class="text-[11px] uppercase tracking-[0.18em] font-bold text-slate-500">Core Pillars</p>
+          <p class="text-sm text-slate-700 mt-1">Innovation • Integrity • Excellence • Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bookshelf -->
+  <section id="bookshelf" class="py-20 px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-2xl font-bold italic text-slate-900 reveal">Featured Publications</h2>
+        <span class="text-[10px] uppercase tracking-[0.2em] text-slate-400">Select work</span>
+      </div>
+      <div id="book-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10"></div>
+      <p class="text-xs text-slate-400 mt-4" id="book-note"></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 px-8 bg-slate-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="space-y-4 reveal delay-1">
+          <p class="text-slate-600 text-sm italic leading-relaxed">
+            "Christine is a reliable technical writer with specific ability to translate complex information into easily understandable terms. She brings a high level of integrity and professionalism to her work."
+          </p>
+          <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-lupi">— Cynthia Weiss, Knox Company</p>
+        </div>
+        <div class="space-y-4 reveal delay-2">
+          <p class="text-slate-600 text-sm italic leading-relaxed">
+            "She brought her experience and extensive knowledge on documentation to make it professional—writing, editing, translating, and correcting within agreed timelines."
+          </p>
+          <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-lupi">— Yuno Jung, Ericsson-LG</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-8 bg-white">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-start">
+      <div class="md:w-3/5 space-y-5 reveal">
+        <h2 class="text-3xl font-bold italic text-slate-900">Founder-led and intentionally boutique.</h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Christine Jeffries launched Lupi Docs & Designs to guide authors from draft to publish with clarity and momentum. She partners with trusted designers and marketers so every book is intentional and reader-ready.
+        </p>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          The Lupi name honors her Jack Russell Terrier—eager, strategic, loyal, energetic. We limit intake to 2–5 book programs per month to keep every project personal.
+        </p>
+      </div>
+      <div class="md:w-2/5 flex items-center justify-center reveal delay-2">
+        <div class="w-full max-w-md overflow-hidden rounded-lg border border-slate-100 shadow-lg bg-white aspect-[16/9]">
+          <img src="images/Christine.jpeg" alt="Christine Jeffries, founder of Lupi Docs & Designs" class="w-full h-full object-cover object-center">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-8 bg-slate-900 text-white">
+    <div class="max-w-2xl mx-auto text-center reveal space-y-6">
+      <div class="space-y-2">
+        <h2 class="text-3xl md:text-4xl font-bold italic">Book a Consult</h2>
+        <p class="text-slate-300 text-sm">Tell us about your book and timeline. We’ll respond with next steps.</p>
+      </div>
+      <form class="space-y-4 text-left">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Full Name" class="w-full p-3.5 bg-slate-800 border border-slate-700 rounded text-sm outline-none focus:border-blue-500 transition-colors">
+          <input type="email" placeholder="Email Address" class="w-full p-3.5 bg-slate-800 border border-slate-700 rounded text-sm outline-none focus:border-blue-500 transition-colors">
+        </div>
+        <input type="text" placeholder="Project status (idea, draft, ready for design...)" class="w-full p-3.5 bg-slate-800 border border-slate-700 rounded text-sm outline-none focus:border-blue-500 transition-colors">
+        <textarea placeholder="Briefly describe your book project..." rows="4" class="w-full p-3.5 bg-slate-800 border border-slate-700 rounded text-sm outline-none focus:border-blue-500 transition-colors"></textarea>
+        <button type="button" class="w-full bg-lupi text-white py-4 rounded font-bold text-[11px] uppercase tracking-[0.22em] transition hover:brightness-110 active:scale-[0.98] transform">Submit</button>
+      </form>
+      <div class="flex justify-center gap-3 text-xs text-slate-300">
+        <span>Email: your-email@lupidocs.com</span>
+        <span class="hidden sm:inline">•</span>
+        <span>Phone: (650) 550-8993</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-8 bg-white border-t border-slate-100 text-center reveal">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4 text-[10px] font-bold tracking-[0.22em] text-slate-500 uppercase">
+      <span>Lupi Docs & Designs</span>
+      <span class="hidden md:inline">•</span>
+      <a href="#privacy" class="hover:text-lupi transition">Privacy</a>
+      <span class="hidden md:inline">•</span>
+      <a href="#accessibility" class="hover:text-lupi transition">Accessibility</a>
+      <span class="hidden md:inline">•</span>
+      <a href="#contact" class="hover:text-lupi transition">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Privacy & Accessibility (lightweight sections) -->
+  <section id="privacy" class="sr-only">
+    <div class="max-w-6xl mx-auto px-8 py-4 text-sm text-slate-600">
+      <h2 class="text-lg font-semibold text-slate-900">Privacy & Cookies</h2>
+      <p>We use essential cookies for site functionality. Analytics/marketing cookies are optional and respect your choices and Global Privacy Control (GPC).</p>
+      <p>Data rights: request access, deletion, correction, or opt-out of sale/sharing/targeted ads by emailing privacy@lupidocs.com.</p>
+    </div>
+  </section>
+
+  <section id="accessibility" class="sr-only">
+    <div class="max-w-6xl mx-auto px-8 py-4 text-sm text-slate-600">
+      <h2 class="text-lg font-semibold text-slate-900">Accessibility</h2>
+      <p>We aim for WCAG 2.1 AA compliance (keyboard support, contrast, alt text, focus states). Need assistance or found an issue? Email accessibility@lupidocs.com or call (650) 550-8993.</p>
+    </div>
+  </section>
+
+  <!-- Cookie / consent banner -->
+  <div id="consent-banner" class="fixed inset-x-4 bottom-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 w-auto max-w-3xl bg-white shadow-xl border border-slate-200 rounded-2xl p-4 flex flex-col md:flex-row md:items-center md:gap-4 text-sm text-slate-700 z-50 hidden">
+    <div class="flex-1">
+      <p class="font-semibold text-slate-900">Cookies & Privacy</p>
+      <p class="text-slate-600 text-sm">We use essential cookies and optional analytics. You can accept or reject. We honor Global Privacy Control.</p>
+    </div>
+    <div class="flex gap-2 mt-3 md:mt-0">
+      <button id="consent-reject" class="px-4 py-2 rounded-lg border border-slate-200 text-slate-700 text-sm font-semibold hover:border-slate-300">Reject</button>
+      <button id="consent-accept" class="px-4 py-2 rounded-lg bg-lupi text-white text-sm font-semibold shadow hover:shadow-md">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    const reveal = () => {
+      document.querySelectorAll('.reveal').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 120) el.classList.add('active');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    // Populate bookshelf from data/books.json
+    window.addEventListener('load', async () => {
+      const grid = document.getElementById('book-grid');
+      const note = document.getElementById('book-note');
+      if (!grid) return;
+      try {
+        const res = await fetch('data/books.json');
+        if (!res.ok) throw new Error('Unable to load books');
+        const books = await res.json();
+        grid.innerHTML = '';
+        books.forEach((book, idx) => {
+          const card = document.createElement('div');
+          card.className = 'space-y-2 reveal delay-' + ((idx % 3) + 1);
+          const link = document.createElement('a');
+          link.href = book.amazon || '#';
+          link.target = '_blank';
+          link.rel = 'noopener';
+          const cover = document.createElement('div');
+          cover.className = 'aspect-[2/3] bg-slate-50 border border-slate-100 overflow-hidden shadow-sm';
+          const img = document.createElement('img');
+          img.src = book.image || '';
+          img.alt = (book.title || 'Book') + ' cover';
+          img.className = 'w-full h-full object-cover';
+          cover.appendChild(img);
+          link.appendChild(cover);
+          card.appendChild(link);
+          const caption = document.createElement('p');
+          caption.className = 'text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500';
+          caption.textContent = book.title || 'Published Book';
+          card.appendChild(caption);
+          grid.appendChild(card);
+        });
+        note.textContent = books.length ? 'Click a cover to view on Amazon.' : 'No books available yet.';
+        reveal(); // trigger animation on new nodes
+      } catch (e) {
+        if (note) note.textContent = 'Books failed to load. Please refresh.';
+      }
+    });
+
+    // Simple consent banner with GPC respect
+    (function() {
+      const banner = document.getElementById('consent-banner');
+      if (!banner) return;
+      const storageKey = 'lupi-consent';
+      const saved = localStorage.getItem(storageKey);
+      const gpc = navigator.globalPrivacyControl === true;
+
+      const acceptBtn = document.getElementById('consent-accept');
+      const rejectBtn = document.getElementById('consent-reject');
+
+      const setConsent = (value) => {
+        localStorage.setItem(storageKey, value);
+        banner.classList.add('hidden');
+        // place to wire analytics enable/disable based on value
+      };
+
+      if (!saved) {
+        if (gpc) {
+          setConsent('rejected-gpc');
+        } else {
+          banner.classList.remove('hidden');
+        }
+      }
+
+      acceptBtn?.addEventListener('click', () => setConsent('accepted'));
+      rejectBtn?.addEventListener('click', () => setConsent('rejected'));
+    })();
+  </script>
+</body>
+</html>
