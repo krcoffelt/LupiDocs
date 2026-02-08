@@ -19,21 +19,25 @@
     .delay-1 { transition-delay: 120ms; }
     .delay-2 { transition-delay: 220ms; }
     .delay-3 { transition-delay: 320ms; }
-    .hero-panel {
-      background-color: #f8fafc;
+    .hero-section {
+      position: relative;
       background-image: url('images/IMG_9357.jpeg');
       background-size: cover;
       background-position: center 42%;
     }
-    .hero-panel::after {
+    .hero-section::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(108deg, rgba(248, 250, 252, 0.95) 0%, rgba(255, 255, 255, 0.92) 44%, rgba(255, 255, 255, 0.72) 100%);
+      background: linear-gradient(108deg, rgba(255, 255, 255, 0.56) 0%, rgba(255, 255, 255, 0.36) 44%, rgba(255, 255, 255, 0.28) 100%);
     }
-    .hero-panel > * {
+    .hero-section > * {
       position: relative;
       z-index: 1;
+    }
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(1.5px);
     }
   </style>
 </head>
@@ -57,7 +61,7 @@
   </nav>
 
   <!-- Hero -->
-  <section class="py-20 md:py-28 px-8">
+  <section class="hero-section py-20 md:py-28 px-8">
     <div class="max-w-6xl mx-auto">
       <div class="hero-panel relative overflow-hidden rounded-3xl border border-slate-100 shadow-2xl px-8 py-12 md:px-14 md:py-16 text-center reveal active">
         <div class="relative space-y-6">
