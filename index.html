@@ -41,12 +41,12 @@
     .nav-link:hover::after { transform: scaleX(1); }
     .reveal {
       opacity: 0;
-      transform: translate3d(0, 34px, 0) scale(0.985);
-      filter: blur(3px);
+      transform: translate3d(0, 20px, 0) scale(0.995);
+      filter: blur(1.2px);
       transition:
-        opacity 0.75s var(--ease-out-soft),
-        transform 0.85s var(--ease-out-expo),
-        filter 0.75s var(--ease-out-soft);
+        opacity 1.05s var(--ease-out-soft),
+        transform 1.15s var(--ease-out-soft),
+        filter 1.05s var(--ease-out-soft);
       will-change: transform, opacity, filter;
     }
     .reveal.active {
@@ -54,9 +54,9 @@
       transform: translate3d(0, 0, 0) scale(1);
       filter: blur(0);
     }
-    .delay-1 { transition-delay: 120ms; }
-    .delay-2 { transition-delay: 220ms; }
-    .delay-3 { transition-delay: 320ms; }
+    .delay-1 { transition-delay: 180ms; }
+    .delay-2 { transition-delay: 300ms; }
+    .delay-3 { transition-delay: 420ms; }
     .hero-section {
       position: relative;
       background-image: url('images/IMG_9357.jpeg');
@@ -71,7 +71,7 @@
         radial-gradient(circle at 12% 18%, rgba(0, 71, 171, 0.24), transparent 42%),
         radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.24), transparent 40%),
         radial-gradient(circle at 66% 86%, rgba(15, 23, 42, 0.12), transparent 45%);
-      animation: ambient-drift 18s ease-in-out infinite alternate;
+      animation: ambient-drift 30s ease-in-out infinite alternate;
       pointer-events: none;
     }
     .hero-section::after {
@@ -87,34 +87,19 @@
     .hero-panel {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(1.5px);
-      animation: panel-in 850ms var(--ease-out-expo) both;
+      animation: panel-in 1250ms var(--ease-out-soft) both;
     }
     .motion-btn {
       transition:
-        transform 0.3s var(--ease-out-expo),
-        box-shadow 0.35s var(--ease-out-soft),
-        filter 0.3s var(--ease-out-soft);
+        transform 0.45s var(--ease-out-soft),
+        box-shadow 0.45s var(--ease-out-soft),
+        background-position 0.6s var(--ease-out-soft),
+        filter 0.45s var(--ease-out-soft);
+      transform: translateY(0);
     }
     .pulse-cta {
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .pulse-cta::after {
-      content: "";
-      position: absolute;
-      top: -150%;
-      left: -75%;
-      width: 58%;
-      height: 380%;
-      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.55) 46%, transparent 100%);
-      transform: translateX(-200%) rotate(20deg);
-      transition: transform 0.95s var(--ease-out-soft);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .pulse-cta:hover::after {
-      transform: translateX(340%) rotate(20deg);
+      background-size: 140% 140%;
+      background-position: 40% 50%;
     }
     .lift-card {
       transition:
@@ -137,7 +122,8 @@
     }
     @media (hover: hover) and (pointer: fine) {
       .motion-btn:hover {
-        transform: translateY(-2px);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
       }
       .lift-card:hover {
         transform: translateY(-8px);
@@ -157,7 +143,7 @@
     @keyframes panel-in {
       0% {
         opacity: 0;
-        transform: translateY(24px) scale(0.985);
+        transform: translateY(18px) scale(0.99);
       }
       100% {
         opacity: 1;
@@ -180,7 +166,6 @@
       .book-cover,
       .book-cover img,
       .hero-section::before,
-      .pulse-cta::after,
       .nav-link::after {
         animation: none !important;
         transition: none !important;
@@ -206,7 +191,7 @@
         <a href="#bookshelf" class="nav-link">Our Library</a>
         <a href="#about" class="nav-link">Our Story</a>
       </div>
-      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-5 py-3 rounded text-[12px] font-bold tracking-widest hover:opacity-90 transition transform hover:scale-105 active:scale-95 md:absolute md:right-8 ml-auto">
+      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-5 py-3 rounded text-[12px] font-bold tracking-widest hover:opacity-90 md:absolute md:right-8 ml-auto">
         Book a Consult
       </a>
     </div>
@@ -224,10 +209,10 @@
             A hands-on publishing partner for thought leaders and entrepreneurs. We tighten manuscripts, craft covers and interiors, and guide launches that reach real readers.
           </p>
           <div class="flex justify-center gap-4 flex-wrap">
-            <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+            <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] shadow-xl">
               Start a Consult
             </a>
-            <a href="#bookshelf" class="motion-btn border border-slate-200 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] text-slate-700 hover:border-lupi hover:text-lupi transition">
+            <a href="#bookshelf" class="motion-btn border border-slate-200 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] text-slate-700 hover:border-lupi hover:text-lupi">
               Our Library
             </a>
           </div>
@@ -360,7 +345,7 @@
         <h2 class="text-3xl md:text-4xl font-bold italic">Book a Consult</h2>
         <p class="text-slate-300 text-sm">Book a consult directly through our online scheduler.</p>
       </div>
-      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta inline-flex items-center justify-center bg-lupi text-white px-8 py-4 rounded font-bold text-[11px] uppercase tracking-[0.22em] transition hover:brightness-110">
+      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta inline-flex items-center justify-center bg-lupi text-white px-8 py-4 rounded font-bold text-[11px] uppercase tracking-[0.22em]">
         Start Here
       </a>
       <div class="space-y-2 text-sm text-slate-300">
@@ -424,7 +409,7 @@
 
     const applyAutoRevealDelay = (el, index) => {
       if (el.classList.contains('delay-1') || el.classList.contains('delay-2') || el.classList.contains('delay-3')) return;
-      const ms = Math.min((index % 5) * 70, 280);
+      const ms = Math.min((index % 5) * 110, 440);
       el.style.transitionDelay = `${ms}ms`;
     };
 
@@ -452,7 +437,7 @@
             entry.target.classList.add('active');
             observer.unobserve(entry.target);
           });
-        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+        }, { threshold: 0.08, rootMargin: '0px 0px -2% 0px' });
       }
       bindRevealAnimations(document);
     };
