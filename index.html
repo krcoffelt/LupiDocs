@@ -7,15 +7,53 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --lupi-blue: #0047AB; }
+    :root {
+      --lupi-blue: #0047AB;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    }
     body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { font-family: 'Roboto Slab', serif; }
     .text-lupi { color: var(--lupi-blue); }
     .bg-lupi { background-color: var(--lupi-blue); }
-    .nav-link { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #64748b; transition: color 0.2s; }
+    .nav-link {
+      position: relative;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #64748b;
+      transition: color 0.22s var(--ease-out-soft);
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--lupi-blue);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.32s var(--ease-out-expo);
+    }
     .nav-link:hover { color: var(--lupi-blue); }
-    .reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 34px, 0) scale(0.985);
+      filter: blur(3px);
+      transition:
+        opacity 0.75s var(--ease-out-soft),
+        transform 0.85s var(--ease-out-expo),
+        filter 0.75s var(--ease-out-soft);
+      will-change: transform, opacity, filter;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
     .delay-1 { transition-delay: 120ms; }
     .delay-2 { transition-delay: 220ms; }
     .delay-3 { transition-delay: 320ms; }
@@ -24,6 +62,17 @@
       background-image: url('images/IMG_9357.jpeg');
       background-size: cover;
       background-position: center 42%;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: -8% -8%;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(0, 71, 171, 0.24), transparent 42%),
+        radial-gradient(circle at 84% 22%, rgba(56, 189, 248, 0.24), transparent 40%),
+        radial-gradient(circle at 66% 86%, rgba(15, 23, 42, 0.12), transparent 45%);
+      animation: ambient-drift 18s ease-in-out infinite alternate;
+      pointer-events: none;
     }
     .hero-section::after {
       content: "";
@@ -38,6 +87,109 @@
     .hero-panel {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(1.5px);
+      animation: panel-in 850ms var(--ease-out-expo) both;
+    }
+    .motion-btn {
+      transition:
+        transform 0.3s var(--ease-out-expo),
+        box-shadow 0.35s var(--ease-out-soft),
+        filter 0.3s var(--ease-out-soft);
+    }
+    .pulse-cta {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .pulse-cta::after {
+      content: "";
+      position: absolute;
+      top: -150%;
+      left: -75%;
+      width: 58%;
+      height: 380%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.55) 46%, transparent 100%);
+      transform: translateX(-200%) rotate(20deg);
+      transition: transform 0.95s var(--ease-out-soft);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .pulse-cta:hover::after {
+      transform: translateX(340%) rotate(20deg);
+    }
+    .lift-card {
+      transition:
+        transform 0.45s var(--ease-out-expo),
+        box-shadow 0.45s var(--ease-out-soft),
+        border-color 0.3s var(--ease-out-soft);
+      will-change: transform;
+    }
+    .book-cover {
+      transition:
+        transform 0.45s var(--ease-out-expo),
+        box-shadow 0.45s var(--ease-out-soft),
+        border-color 0.3s var(--ease-out-soft);
+      transform-origin: center bottom;
+      will-change: transform;
+    }
+    .book-cover img {
+      transition: transform 0.65s var(--ease-out-soft), filter 0.4s var(--ease-out-soft);
+      will-change: transform;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .motion-btn:hover {
+        transform: translateY(-2px);
+      }
+      .lift-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 34px rgba(15, 23, 42, 0.13);
+        border-color: rgba(0, 71, 171, 0.25);
+      }
+      .book-cover:hover {
+        transform: translateY(-8px) scale(1.012);
+        box-shadow: 0 20px 34px rgba(15, 23, 42, 0.2);
+        border-color: rgba(0, 71, 171, 0.25);
+      }
+      .book-cover:hover img {
+        transform: scale(1.065);
+        filter: saturate(1.08);
+      }
+    }
+    @keyframes panel-in {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @keyframes ambient-drift {
+      0% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      100% {
+        transform: translate3d(1.2%, -1.4%, 0) scale(1.05);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .hero-panel,
+      .motion-btn,
+      .lift-card,
+      .book-cover,
+      .book-cover img,
+      .hero-section::before,
+      .pulse-cta::after,
+      .nav-link::after {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        filter: none !important;
+      }
+      .reveal {
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -54,7 +206,7 @@
         <a href="#bookshelf" class="nav-link">Our Library</a>
         <a href="#about" class="nav-link">Our Story</a>
       </div>
-      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="bg-lupi text-white px-5 py-3 rounded text-[12px] font-bold tracking-widest hover:opacity-90 transition transform hover:scale-105 active:scale-95 md:absolute md:right-8 ml-auto">
+      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-5 py-3 rounded text-[12px] font-bold tracking-widest hover:opacity-90 transition transform hover:scale-105 active:scale-95 md:absolute md:right-8 ml-auto">
         Book a Consult
       </a>
     </div>
@@ -72,10 +224,10 @@
             A hands-on publishing partner for thought leaders and entrepreneurs. We tighten manuscripts, craft covers and interiors, and guide launches that reach real readers.
           </p>
           <div class="flex justify-center gap-4 flex-wrap">
-            <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="bg-lupi text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
+            <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta bg-lupi text-white px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] shadow-xl hover:shadow-2xl transition transform hover:-translate-y-1">
               Start a Consult
             </a>
-            <a href="#bookshelf" class="border border-slate-200 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] text-slate-700 hover:border-lupi hover:text-lupi transition">
+            <a href="#bookshelf" class="motion-btn border border-slate-200 px-10 py-4 rounded-lg font-bold text-sm uppercase tracking-[0.24em] text-slate-700 hover:border-lupi hover:text-lupi transition">
               Our Library
             </a>
           </div>
@@ -105,7 +257,7 @@
         <p class="text-base md:text-lg text-slate-600">High-impact book projects, bestseller book sales and real-reader reviews.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Bestseller Campaigns</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Retail momentum</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -113,7 +265,7 @@
             <li>Real reader sales and category pushes</li>
           </ul>
         </div>
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Verified Reviews</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Social proof</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -121,7 +273,7 @@
             <li>Professional editorial and marketing reports</li>
           </ul>
         </div>
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Social & Digital</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Multi-platform reach</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -129,7 +281,7 @@
             <li>National digital press placements</li>
           </ul>
         </div>
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Premium & Hotel Placement</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Print + digital readers</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -137,7 +289,7 @@
             <li>Book Clubs, Schools, Groups</li>
           </ul>
         </div>
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-1">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Manuscript Review & Development</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Clarity before creation</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -145,7 +297,7 @@
             <li>Book coaching, ghostwriting, editing</li>
           </ul>
         </div>
-        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
+        <div class="lift-card p-5 bg-white border border-slate-100 rounded-xl shadow-sm reveal delay-2">
           <p class="text-[11px] uppercase tracking-[0.18em] text-lupi font-bold">Design & Production</p>
           <h3 class="text-lg font-semibold text-slate-900 mt-2">Retail-ready assets</h3>
           <ul class="mt-3 space-y-1.5 text-sm text-slate-600 leading-relaxed list-disc list-inside">
@@ -160,12 +312,12 @@
   <!-- Published authors CTA -->
   <section class="py-12 px-8">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-900 text-white rounded-2xl px-6 py-6 shadow-lg reveal">
+      <div class="lift-card flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-900 text-white rounded-2xl px-6 py-6 shadow-lg reveal">
         <div class="text-left space-y-1">
           <p class="text-[11px] uppercase tracking-[0.22em] text-slate-300 font-bold">For published authors</p>
           <h3 class="text-xl font-semibold leading-snug">Already published and need more book sales or reviews?</h3>
         </div>
-        <a href="https://pci.jotform.com/form/252736934520156" target="_blank" rel="noopener" class="bg-white text-slate-900 px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-[0.2em] shadow hover:shadow-md transition whitespace-nowrap">Boost My Book</a>
+        <a href="https://pci.jotform.com/form/252736934520156" target="_blank" rel="noopener" class="motion-btn bg-white text-slate-900 px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-[0.2em] shadow hover:shadow-md transition whitespace-nowrap">Boost My Book</a>
       </div>
     </div>
   </section>
@@ -208,7 +360,7 @@
         <h2 class="text-3xl md:text-4xl font-bold italic">Book a Consult</h2>
         <p class="text-slate-300 text-sm">Book a consult directly through our online scheduler.</p>
       </div>
-      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-lupi text-white px-8 py-4 rounded font-bold text-[11px] uppercase tracking-[0.22em] transition hover:brightness-110">
+      <a href="https://45379.17hats.com/p#/scheduling/dzdczbrwpcwxpbpbxbdnpsthkknfvvvb" target="_blank" rel="noopener" class="motion-btn pulse-cta inline-flex items-center justify-center bg-lupi text-white px-8 py-4 rounded font-bold text-[11px] uppercase tracking-[0.22em] transition hover:brightness-110">
         Start Here
       </a>
       <div class="space-y-2 text-sm text-slate-300">
@@ -267,14 +419,70 @@
   </div>
 
   <script>
-    const reveal = () => {
-      document.querySelectorAll('.reveal').forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 120) el.classList.add('active');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let revealObserver = null;
+
+    const applyAutoRevealDelay = (el, index) => {
+      if (el.classList.contains('delay-1') || el.classList.contains('delay-2') || el.classList.contains('delay-3')) return;
+      const ms = Math.min((index % 5) * 70, 280);
+      el.style.transitionDelay = `${ms}ms`;
+    };
+
+    const bindRevealAnimations = (scope = document) => {
+      const boundCount = document.querySelectorAll('.reveal[data-reveal-bound="true"]').length;
+      const revealNodes = [...scope.querySelectorAll('.reveal')].filter((el) => !el.dataset.revealBound);
+
+      revealNodes.forEach((el, index) => {
+        el.dataset.revealBound = 'true';
+        applyAutoRevealDelay(el, boundCount + index);
+
+        if (prefersReducedMotion || !revealObserver) {
+          el.classList.add('active');
+          return;
+        }
+        revealObserver.observe(el);
       });
     };
-    window.addEventListener('scroll', reveal);
-    window.addEventListener('load', reveal);
+
+    const setupRevealAnimations = () => {
+      if (!prefersReducedMotion) {
+        revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      }
+      bindRevealAnimations(document);
+    };
+
+    const setupHeroParallax = () => {
+      if (prefersReducedMotion) return;
+      const hero = document.querySelector('.hero-section');
+      if (!hero) return;
+
+      let ticking = false;
+      const updatePosition = () => {
+        const rect = hero.getBoundingClientRect();
+        const shift = Math.max(-18, Math.min(18, rect.top * -0.08));
+        hero.style.backgroundPosition = `center calc(42% + ${shift}px)`;
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updatePosition);
+      }, { passive: true });
+
+      updatePosition();
+    };
+
+    window.addEventListener('load', () => {
+      setupRevealAnimations();
+      setupHeroParallax();
+    });
 
     // Populate bookshelf from data/books.json
     window.addEventListener('load', async () => {
@@ -294,7 +502,7 @@
           link.target = '_blank';
           link.rel = 'noopener';
           const cover = document.createElement('div');
-          cover.className = 'aspect-[2/3] bg-slate-50 border border-slate-100 overflow-hidden shadow-sm';
+          cover.className = 'book-cover aspect-[2/3] bg-slate-50 border border-slate-100 overflow-hidden shadow-sm';
           const img = document.createElement('img');
           img.src = book.image || '';
           img.alt = (book.title || 'Book') + ' cover';
@@ -305,7 +513,7 @@
           grid.appendChild(card);
         });
         note.textContent = books.length ? 'Published Books - Click a cover to view on Amazon.' : 'Published Books - No books available yet.';
-        reveal(); // trigger animation on new nodes
+        bindRevealAnimations(grid);
       } catch (e) {
         if (note) note.textContent = 'Published Books - Failed to load. Please refresh.';
       }
