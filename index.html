@@ -14,7 +14,10 @@
   <link rel="icon" type="image/jpeg" sizes="2000x2000" href="/favicon.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" as="image" href="/images/IMG_9357.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -329,7 +332,7 @@
       </div>
       <div class="md:w-2/5 flex items-center justify-center reveal delay-2">
         <div class="w-full max-w-md overflow-hidden rounded-lg border border-slate-100 shadow-lg bg-white aspect-[16/9]">
-          <img src="images/Christine.jpeg" alt="Christine Leninger, founder of Lupi Docs & Designs" class="w-full h-full object-cover object-center">
+          <img src="images/Christine.jpeg" alt="Christine Leninger, founder of Lupi Docs & Designs" width="1170" height="1015" class="w-full h-full object-cover object-center">
         </div>
       </div>
     </div>
@@ -461,40 +464,85 @@
       setupHeroParallax();
     });
 
-    // Populate bookshelf from data/books.json
-    window.addEventListener('load', async () => {
+    const normalizeAmazonCoverUrl = (rawUrl) => {
+      if (!rawUrl) return '';
+      // Keep source parity while requesting a smaller Amazon cover variant.
+      return rawUrl.replace(/_SL\d+_/i, '_SL640_');
+    };
+
+    const setupBookshelfLoader = () => {
+      const section = document.getElementById('bookshelf');
       const grid = document.getElementById('book-grid');
       const note = document.getElementById('book-note');
-      if (!grid) return;
-      try {
-        const res = await fetch('data/books.json');
-        if (!res.ok) throw new Error('Unable to load books');
-        const books = await res.json();
-        grid.innerHTML = '';
-        books.forEach((book, idx) => {
-          const card = document.createElement('div');
-          card.className = 'space-y-2 reveal delay-' + ((idx % 3) + 1);
-          const link = document.createElement('a');
-          link.href = book.amazon || '#';
-          link.target = '_blank';
-          link.rel = 'noopener';
-          const cover = document.createElement('div');
-          cover.className = 'book-cover aspect-[2/3] bg-slate-50 border border-slate-100 overflow-hidden shadow-sm';
-          const img = document.createElement('img');
-          img.src = book.image || '';
-          img.alt = (book.title || 'Book') + ' cover';
-          img.className = 'w-full h-full object-cover';
-          cover.appendChild(img);
-          link.appendChild(cover);
-          card.appendChild(link);
-          grid.appendChild(card);
-        });
-        note.textContent = books.length ? 'Published Books - Click a cover to view on Amazon.' : 'Published Books - No books available yet.';
-        bindRevealAnimations(grid);
-      } catch (e) {
-        if (note) note.textContent = 'Published Books - Failed to load. Please refresh.';
+      if (!section || !grid) return;
+
+      let loaded = false;
+
+      const loadBookshelf = async () => {
+        if (loaded) return;
+        loaded = true;
+
+        try {
+          const res = await fetch('data/books.json');
+          if (!res.ok) throw new Error('Unable to load books');
+          const books = await res.json();
+          grid.innerHTML = '';
+
+          books.forEach((book, idx) => {
+            const card = document.createElement('div');
+            card.className = 'space-y-2 reveal delay-' + ((idx % 3) + 1);
+
+            const link = document.createElement('a');
+            link.href = book.amazon || '#';
+            link.target = '_blank';
+            link.rel = 'noopener';
+
+            const cover = document.createElement('div');
+            cover.className = 'book-cover aspect-[2/3] bg-slate-50 border border-slate-100 overflow-hidden shadow-sm';
+
+            const img = document.createElement('img');
+            img.src = normalizeAmazonCoverUrl(book.image || '');
+            img.alt = (book.title || 'Book') + ' cover';
+            img.className = 'w-full h-full object-cover';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.fetchPriority = 'low';
+            img.width = 640;
+            img.height = 960;
+
+            cover.appendChild(img);
+            link.appendChild(cover);
+            card.appendChild(link);
+            grid.appendChild(card);
+          });
+
+          note.textContent = books.length
+            ? 'Published Books - Click a cover to view on Amazon.'
+            : 'Published Books - No books available yet.';
+
+          bindRevealAnimations(grid);
+        } catch (e) {
+          if (note) note.textContent = 'Published Books - Failed to load. Please refresh.';
+        }
+      };
+
+      if (!('IntersectionObserver' in window)) {
+        window.addEventListener('load', loadBookshelf, { once: true });
+        return;
       }
-    });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+          loadBookshelf();
+        });
+      }, { rootMargin: '350px 0px' });
+
+      observer.observe(section);
+    };
+
+    setupBookshelfLoader();
 
     // Simple consent banner with GPC respect
     (function() {
