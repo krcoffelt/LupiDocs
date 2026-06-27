@@ -1,9 +1,6 @@
 module.exports = {
   content: [
-    "./index.html",
-    "./privacy.html",
-    "./accessibility.html",
-    "./sitemap.html",
+    "./*.html",
   ],
   theme: {
     extend: {},
