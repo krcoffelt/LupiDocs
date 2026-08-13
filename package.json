@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/css/site.min.css --minify",
-    "build": "npm run build:css"
+    "build": "npm run build:css",
+    "test:seo": "node ./scripts/seo-check.mjs",
+    "test": "npm run build && npm run test:seo"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"

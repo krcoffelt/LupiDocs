@@ -32,33 +32,36 @@
     .link-card:hover { border-color: rgba(0, 71, 171, 0.35); box-shadow: 0 16px 32px rgba(15, 23, 42, 0.10); transform: translateY(-3px); }
   </style>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Book Publishing and Author Marketing Services",
-      "provider": {"@type": "Organization", "name": "Lupi Docs & Designs", "url": "https://lupidocs.com/"},
-      "areaServed": "United States",
-      "serviceType": "Book publishing, author marketing, manuscript development, book design, and review strategy"
-    }
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"Organization","@id":"https://lupidocs.com/#organization","name":"Lupi Docs & Designs","url":"https://lupidocs.com/"},
+      {"@type":"WebSite","@id":"https://lupidocs.com/#website","url":"https://lupidocs.com/","name":"Lupi Docs & Designs","publisher":{"@id":"https://lupidocs.com/#organization"}},
+      {"@type":"WebPage","@id":"https://lupidocs.com/services.html#webpage","url":"https://lupidocs.com/services.html","name":"Book Publishing and Author Marketing Services","isPartOf":{"@id":"https://lupidocs.com/#website"}},
+      {"@type":"Service","@id":"https://lupidocs.com/services.html#service","name":"Book Publishing and Author Marketing Services","url":"https://lupidocs.com/services.html","provider":{"@id":"https://lupidocs.com/#organization"},"areaServed":{"@type":"Country","name":"United States"},"serviceType":"Book publishing, author marketing, manuscript development, book design, and review strategy"},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lupidocs.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://lupidocs.com/services.html"}]}
+    ]}
   </script>
 </head>
 <body class="bg-white text-slate-800">
   <header class="border-b border-slate-100 bg-white">
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
-      <a href="index.html" class="font-bold text-lg uppercase tracking-tight text-lupi">Lupi Docs & Designs</a>
-      <a href="index.html" class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 hover:text-lupi">Back to Home</a>
+      <a href="/" class="font-bold text-lg uppercase tracking-tight text-lupi">Lupi Docs & Designs</a>
+      <nav aria-label="Primary" class="flex items-center gap-4"><a href="/services.html" aria-current="page" class="text-xs font-semibold uppercase tracking-[0.18em] text-lupi">Services</a><a href="/book-publishing-services.html" class="hidden sm:inline text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 hover:text-lupi">Publishing</a></nav>
     </div>
   </header>
 
   <main>
     <section class="px-6 py-16 bg-slate-50">
       <div class="max-w-5xl mx-auto space-y-5">
+        <nav aria-label="Breadcrumb" class="text-xs text-slate-500"><a href="/" class="hover:text-lupi">Home</a><span aria-hidden="true"> / </span><span>Services</span></nav>
         <p class="text-xs uppercase tracking-[0.22em] text-lupi font-bold">Services directory</p>
         <h1 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Book publishing and author marketing services</h1>
         <p class="text-lg text-slate-700 leading-relaxed max-w-3xl">
           Lupi Docs & Designs supports authors from idea development through book production, retail launch, marketing, review strategy, and long-term reader outreach. Use this directory to find the service page that best fits your project stage.
         </p>
       </div>
+    </section>
+    <section class="px-6 py-14 bg-slate-50 border-y border-slate-100" aria-labelledby="guides-title">
+      <div class="max-w-6xl mx-auto"><p class="text-xs uppercase tracking-[0.22em] text-lupi font-bold">Publishing resources</p><h2 id="guides-title" class="mt-3 text-3xl font-bold text-slate-900">Plan the work before choosing a service</h2><div class="mt-8 grid md:grid-cols-3 gap-5"><a href="/guides/how-to-self-publish-a-book.html" class="link-card transition border border-slate-200 rounded-xl p-6 bg-white"><h3 class="text-xl font-bold text-slate-900">How to self-publish a book</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">A nine-step sequence from reader definition through post-launch maintenance.</p></a><a href="/guides/self-publishing-cost.html" class="link-card transition border border-slate-200 rounded-xl p-6 bg-white"><h3 class="text-xl font-bold text-slate-900">What self-publishing costs</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Understand editing, design, identifiers, printing, distribution, and marketing costs.</p></a><a href="/guides/how-to-market-a-self-published-book.html" class="link-card transition border border-slate-200 rounded-xl p-6 bg-white"><h3 class="text-xl font-bold text-slate-900">How to market the book</h3><p class="mt-2 text-sm text-slate-600 leading-relaxed">Position the book, prepare launch assets, earn attention, and measure useful signals.</p></a></div></div>
     </section>
 
     <section class="px-6 py-14">
@@ -84,8 +87,9 @@
   <footer class="border-t border-slate-100 bg-white">
     <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-slate-500 flex flex-col md:flex-row gap-3 items-center justify-between">
       <span>Lupi Docs & Designs</span>
-      <div class="flex gap-4"><a href="privacy.html" class="hover:text-lupi">Privacy</a><a href="accessibility.html" class="hover:text-lupi">Accessibility</a><a href="sitemap.html" class="hover:text-lupi">Sitemap</a></div>
+      <nav aria-label="Footer" class="flex flex-wrap gap-4"><a href="/privacy.html" class="hover:text-lupi">Privacy</a><a href="/accessibility.html" class="hover:text-lupi">Accessibility</a><a href="/sitemap.html" class="hover:text-lupi">Sitemap</a><button type="button" onclick="openLupiPrivacySettings()" class="hover:text-lupi">Analytics preferences</button></nav>
     </div>
   </footer>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>

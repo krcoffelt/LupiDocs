@@ -1,0 +1,278 @@
+[build]
+command = "npm run build"
+publish = "."
+
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301
+force = true
+
+[[redirects]]
+from = "/services"
+to = "/services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/services/"
+to = "/services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-services"
+to = "/book-publishing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-services/"
+to = "/book-publishing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/self-publishing-support"
+to = "/self-publishing-support.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/self-publishing-support/"
+to = "/self-publishing-support.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-consultant"
+to = "/book-publishing-consultant.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-consultant/"
+to = "/book-publishing-consultant.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-marketing-services"
+to = "/book-marketing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-marketing-services/"
+to = "/book-marketing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-promotion-services"
+to = "/book-promotion-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-promotion-services/"
+to = "/book-promotion-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/author-marketing-services"
+to = "/author-marketing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/author-marketing-services/"
+to = "/author-marketing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/amazon-bestseller-campaign"
+to = "/amazon-bestseller-campaign.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/amazon-bestseller-campaign/"
+to = "/amazon-bestseller-campaign.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-reviews-service"
+to = "/book-reviews-service.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-reviews-service/"
+to = "/book-reviews-service.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/manuscript-review-services"
+to = "/manuscript-review-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/manuscript-review-services/"
+to = "/manuscript-review-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-coaching-services"
+to = "/book-coaching-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-coaching-services/"
+to = "/book-coaching-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ghostwriting-editing-services"
+to = "/ghostwriting-editing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ghostwriting-editing-services/"
+to = "/ghostwriting-editing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-cover-interior-design"
+to = "/book-cover-interior-design.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-cover-interior-design/"
+to = "/book-cover-interior-design.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-memoir"
+to = "/publish-a-memoir.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-memoir/"
+to = "/publish-a-memoir.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-business-book"
+to = "/publish-a-business-book.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-business-book/"
+to = "/publish-a-business-book.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacy"
+to = "/privacy.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/privacy/"
+to = "/privacy.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/accessibility"
+to = "/accessibility.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/accessibility/"
+to = "/accessibility.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/sitemap"
+to = "/sitemap.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/sitemap/"
+to = "/sitemap.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost"
+to = "/guides/self-publishing-cost.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost/"
+to = "/guides/self-publishing-cost.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book"
+to = "/guides/how-to-self-publish-a-book.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book/"
+to = "/guides/how-to-self-publish-a-book.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book"
+to = "/guides/how-to-market-a-self-published-book.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book/"
+to = "/guides/how-to-market-a-self-published-book.html"
+status = 301
+force = true
+
+[[headers]]
+for = "/*"
+[headers.values]
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+for = "/assets/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/images/*"
+[headers.values]
+  Cache-Control = "public, max-age=604800"

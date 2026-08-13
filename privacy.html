@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Lupi Docs & Designs</title>
   <meta name="description" content="Privacy policy for Lupi Docs & Designs, including information collection, cookies, data sharing, and contact details.">
+  <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://lupidocs.com/privacy.html">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
   <link rel="icon" type="image/jpeg" sizes="2000x2000" href="/favicon.jpg">
@@ -25,10 +26,10 @@
 <body class="bg-white text-slate-800">
   <header class="border-b border-slate-100 bg-white">
     <div class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
-      <a href="index.html" class="font-bold text-lg uppercase tracking-tight text-lupi">Lupi Docs & Designs</a>
+      <a href="/" class="font-bold text-lg uppercase tracking-tight text-lupi">Lupi Docs & Designs</a>
       <div class="flex items-center gap-4">
         <a href="sitemap.html" class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 hover:text-lupi">Sitemap</a>
-        <a href="index.html" class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 hover:text-lupi">Back to Home</a>
+        <a href="/" class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600 hover:text-lupi">Back to Home</a>
       </div>
     </div>
   </header>
@@ -62,8 +63,9 @@
     <section class="space-y-2">
       <h2 class="text-xl font-bold text-slate-900">Cookies</h2>
       <p class="text-slate-700 leading-relaxed">
-        Our website uses essential cookies for site functionality and may use optional analytics cookies. Where required, you can accept or reject optional cookies.
+        Our website uses essential browser storage for site functionality and may use optional Google Analytics cookies. Analytics storage is denied by default and enabled only after you accept it. Advertising storage and personalization remain disabled.
       </p>
+      <button type="button" onclick="openLupiPrivacySettings()" class="text-lupi underline underline-offset-2 font-semibold">Review analytics preferences</button>
     </section>
 
     <section class="space-y-2">
@@ -95,5 +97,6 @@
       </a>
     </div>
   </footer>
+  <script src="/assets/js/site.js" defer></script>
 </body>
 </html>
