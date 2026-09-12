@@ -226,37 +226,55 @@ force = true
 
 [[redirects]]
 from = "/guides/self-publishing-cost"
-to = "/guides/self-publishing-cost.html"
+to = "/self-publishing-support.html"
 status = 301
 force = true
 
 [[redirects]]
 from = "/guides/self-publishing-cost/"
-to = "/guides/self-publishing-cost.html"
+to = "/self-publishing-support.html"
 status = 301
 force = true
 
 [[redirects]]
 from = "/guides/how-to-self-publish-a-book"
-to = "/guides/how-to-self-publish-a-book.html"
+to = "/self-publishing-support.html"
 status = 301
 force = true
 
 [[redirects]]
 from = "/guides/how-to-self-publish-a-book/"
-to = "/guides/how-to-self-publish-a-book.html"
+to = "/self-publishing-support.html"
 status = 301
 force = true
 
 [[redirects]]
 from = "/guides/how-to-market-a-self-published-book"
-to = "/guides/how-to-market-a-self-published-book.html"
+to = "/book-marketing-services.html"
 status = 301
 force = true
 
 [[redirects]]
 from = "/guides/how-to-market-a-self-published-book/"
-to = "/guides/how-to-market-a-self-published-book.html"
+to = "/book-marketing-services.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost.html"
+to = "/self-publishing-support.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book.html"
+to = "/self-publishing-support.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book.html"
+to = "/book-marketing-services.html"
 status = 301
 force = true
 
