@@ -68,5 +68,15 @@
     "amazon": "https://amzn.to/47UBEO8",
     "image": "https://m.media-amazon.com/images/I/61P3gALWdIL._SL1360_.jpg",
     "title": "Own the Perfect Business"
+  },
+  {
+    "image": "/images/tinky-too-at-valley-forge.jpg",
+    "title": "Tinky-Too at Valley Forge"
+  },
+  {
+    "amazon": "https://a.co/d/0io9ZyaM",
+    "image": "/images/environmental-book-cover.jpg",
+    "releaseDate": "2026-09-14",
+    "title": "environmental"
   }
 ]
