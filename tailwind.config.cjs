@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "./*.html",
-    "./guides/**/*.html",
+    "./assets/js/**/*.js",
   ],
   theme: {
     extend: {},

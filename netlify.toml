@@ -10,181 +10,325 @@ force = true
 
 [[redirects]]
 from = "/services"
-to = "/services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/services/"
-to = "/services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-publishing-services"
-to = "/book-publishing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-publishing-services/"
-to = "/book-publishing-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/self-publishing-support"
-to = "/self-publishing-support.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/self-publishing-support/"
-to = "/self-publishing-support.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/self-publishing-support.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-publishing-consultant"
-to = "/book-publishing-consultant.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-publishing-consultant/"
-to = "/book-publishing-consultant.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-publishing-consultant.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-marketing-services"
-to = "/book-marketing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-marketing-services/"
-to = "/book-marketing-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-marketing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-promotion-services"
-to = "/book-promotion-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-promotion-services/"
-to = "/book-promotion-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-promotion-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/author-marketing-services"
-to = "/author-marketing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/author-marketing-services/"
-to = "/author-marketing-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/author-marketing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/amazon-bestseller-campaign"
-to = "/amazon-bestseller-campaign.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/amazon-bestseller-campaign/"
-to = "/amazon-bestseller-campaign.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/amazon-bestseller-campaign.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-reviews-service"
-to = "/book-reviews-service.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-reviews-service/"
-to = "/book-reviews-service.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-reviews-service.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/manuscript-review-services"
-to = "/manuscript-review-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/manuscript-review-services/"
-to = "/manuscript-review-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/manuscript-review-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-coaching-services"
-to = "/book-coaching-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-coaching-services/"
-to = "/book-coaching-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-coaching-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/ghostwriting-editing-services"
-to = "/ghostwriting-editing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/ghostwriting-editing-services/"
-to = "/ghostwriting-editing-services.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/ghostwriting-editing-services.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-cover-interior-design"
-to = "/book-cover-interior-design.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/book-cover-interior-design/"
-to = "/book-cover-interior-design.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/book-cover-interior-design.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/publish-a-memoir"
-to = "/publish-a-memoir.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/publish-a-memoir/"
-to = "/publish-a-memoir.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-memoir.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/publish-a-business-book"
-to = "/publish-a-business-book.html"
+to = "/#services"
 status = 301
 force = true
 
 [[redirects]]
 from = "/publish-a-business-book/"
-to = "/publish-a-business-book.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/publish-a-business-book.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost/"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/self-publishing-cost.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book/"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-self-publish-a-book.html"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book/"
+to = "/#services"
+status = 301
+force = true
+
+[[redirects]]
+from = "/guides/how-to-market-a-self-published-book.html"
+to = "/#services"
 status = 301
 force = true
 
@@ -221,60 +365,6 @@ force = true
 [[redirects]]
 from = "/sitemap/"
 to = "/sitemap.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/self-publishing-cost"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/self-publishing-cost/"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-self-publish-a-book"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-self-publish-a-book/"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-market-a-self-published-book"
-to = "/book-marketing-services.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-market-a-self-published-book/"
-to = "/book-marketing-services.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/self-publishing-cost.html"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-self-publish-a-book.html"
-to = "/self-publishing-support.html"
-status = 301
-force = true
-
-[[redirects]]
-from = "/guides/how-to-market-a-self-published-book.html"
-to = "/book-marketing-services.html"
 status = 301
 force = true
 
