@@ -1,5 +1,16 @@
 [
   {
+    "amazon": "https://a.co/d/0io9ZyaM",
+    "image": "/images/environmental-book-cover.jpg",
+    "releaseDate": "2026-09-14",
+    "title": "environmental"
+  },
+  {
+    "fit": "contain",
+    "image": "/images/tinky-too-at-valley-forge.jpg",
+    "title": "Tinky-Too at Valley Forge"
+  },
+  {
     "amazon": "https://www.amazon.com/Gallery-RELEASE-Club-Llithium-Chronicles-ebook/dp/B0DHT5CKKS/ref=sr_1_1?crid=3R4ZLJ161X6Q9&dib=eyJ2IjoiMSJ9.AxqEErvpNAHL8hQ_SBGI2B4D-2FIoDhJ8wMrqc_yIXPGjHj071QN20LucGBJIEps.T99ugp7vLXA20TOAn5Eb-aX_mb8BlVoPf6ziPIxRTSY&dib_tag=se&keywords=The+Gallery+CR+Allen&qid=1728063170&sprefix=the+gallery+cr+allen%2Caps%2C232&sr=8-1",
     "image": "https://m.media-amazon.com/images/I/81jGvOFhVgL._SL1500_.jpg",
     "title": "The Gallery"
@@ -68,16 +79,5 @@
     "amazon": "https://amzn.to/47UBEO8",
     "image": "https://m.media-amazon.com/images/I/61P3gALWdIL._SL1360_.jpg",
     "title": "Own the Perfect Business"
-  },
-  {
-    "fit": "contain",
-    "image": "/images/tinky-too-at-valley-forge.jpg",
-    "title": "Tinky-Too at Valley Forge"
-  },
-  {
-    "amazon": "https://a.co/d/0io9ZyaM",
-    "image": "/images/environmental-book-cover.jpg",
-    "releaseDate": "2026-09-14",
-    "title": "environmental"
   }
 ]
